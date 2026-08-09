@@ -1,6 +1,7 @@
-# Top Banner Plugin
+# Bottom Banner Plugin
 
-A simple banner that displays at the top of your website.
+A simple, static banner that displays at the bottom of your website. It remains in
+the normal page flow and does not stay fixed to the viewport while scrolling.
 
 ## Configuration
 
@@ -11,8 +12,11 @@ A simple banner that displays at the top of your website.
 
 ## Version History
 
+### 1.0.3
+- Move the banner to a static position at the bottom of the page
+
 ### 1.0.0 (Initial Release)
-- Basic top banner functionality
+- Basic banner functionality
 - Customizable message
 - Customizable colors
 - Enable/disable toggle

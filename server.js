@@ -1,6 +1,6 @@
 /**
- * Top Banner Plugin
- * Displays a customizable banner at the top of the page
+ * Bottom Banner Plugin
+ * Displays a customizable static banner at the bottom of the page
  */
 
 module.exports = {
@@ -16,8 +16,9 @@ module.exports = {
         text-align: center;
         font-weight: 600;
         font-size: 1.125rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
         display: block;
+        position: static;
         z-index: 1000;
       }
       #opening-banner a {
@@ -42,7 +43,7 @@ module.exports = {
       .replace(/'/g, '&#39;');
 
     return `
-<!-- Top Banner Plugin -->
+<!-- Bottom Banner Plugin -->
 <div id="opening-banner">
   ${escapedMessage}
 </div>
