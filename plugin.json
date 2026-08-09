@@ -1,8 +1,8 @@
 {
   "name": "top-banner",
-  "version": "1.0.2",
-  "displayName": "Top Banner",
-  "description": "Toon een aanpasbare banner bovenaan uw website.",
+  "version": "1.0.3",
+  "displayName": "Bottom Banner",
+  "description": "Toon een aanpasbare, statische banner onderaan uw website.",
   "author": "De Haas Digital",
   "capabilities": ["ui.inject"],
   "entry": {
