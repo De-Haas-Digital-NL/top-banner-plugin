@@ -10,19 +10,21 @@ module.exports = {
   registerCss: async (config) => {
     return `
       #opening-banner {
-        background: ${config.bgColor || 'var(--color-brand-yellow)'};
-        color: ${config.textColor || 'var(--color-brand-black)'};
+        background: ${config.bgColor || "var(--color-brand-yellow)"};
+        color: ${config.textColor || "var(--color-brand-black)"};
         padding: 12px 16px;
         text-align: center;
         font-weight: 600;
         font-size: 1.125rem;
         box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
         display: block;
-        position: static;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
         z-index: 1000;
       }
       #opening-banner a {
-        color: ${config.textColor || 'var(--color-brand-black)'};
+        color: ${config.textColor || "var(--color-brand-black)"};
         text-decoration: underline;
       }
     `;
@@ -32,15 +34,15 @@ module.exports = {
    * Register body snippet (HTML + inline JS)
    */
   registerBodySnippet: async (config) => {
-    const message = config.message || 'Nu ook online te bestellen!';
-    
+    const message = config.message || "Nu ook online te bestellen!";
+
     // Escape for HTML
     const escapedMessage = message
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
 
     return `
 <!-- Bottom Banner Plugin -->
@@ -54,20 +56,20 @@ module.exports = {
    * Called when plugin is enabled
    */
   onEnable: async (config) => {
-    console.log('[top-banner] Plugin enabled');
+    console.log("[top-banner] Plugin enabled");
   },
 
   /**
    * Called when plugin is disabled
    */
   onDisable: async () => {
-    console.log('[top-banner] Plugin disabled');
+    console.log("[top-banner] Plugin disabled");
   },
 
   /**
    * Called when config changes
    */
   onConfigChange: async (newConfig, oldConfig) => {
-    console.log('[top-banner] Config updated');
-  }
+    console.log("[top-banner] Config updated");
+  },
 };
