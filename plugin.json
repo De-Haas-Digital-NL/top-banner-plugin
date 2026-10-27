@@ -1,8 +1,8 @@
 {
   "name": "top-banner",
-  "version": "1.1.0",
-  "displayName": "Bottom Banner",
-  "description": "Toon een aanpasbare, statische banner onderaan uw website.",
+  "version": "1.2.0",
+  "displayName": "Banner",
+  "description": "Toon een aanpasbare banner bovenaan of onderaan uw website.",
   "author": "De Haas Digital",
   "capabilities": [
     "ui.inject"
@@ -25,10 +25,26 @@
       "label": "Text Kleur",
       "default": "#ffffff",
       "description": "Bannertekstkleur (CSS-kleurwaarde of var)"
+    },
+    "position": {
+      "type": "string",
+      "label": "Positie",
+      "default": "top",
+      "description": "Bovenaan in de pagina, of vast onderaan het scherm",
+      "options": [
+        {
+          "value": "top",
+          "label": "Bovenaan"
+        },
+        {
+          "value": "bottom",
+          "label": "Onderaan"
+        }
+      ]
     }
   },
   "inject": {
-    "head": "<style id=\"opening-banner-css\">#opening-banner{background:{{bgColor}};color:{{textColor}};padding:12px 16px;text-align:center;font-weight:600;font-size:1.125rem;box-shadow:0 -4px 12px rgba(0,0,0,.08);display:block;position:fixed;width:100%;bottom:0;z-index:1000}#opening-banner a{color:{{textColor}};text-decoration:underline}</style>",
-    "body": "<div id=\"opening-banner\">{{message}}</div>"
+    "head": "<style id=\"opening-banner-css\">#opening-banner{background:{{bgColor}};color:{{textColor}};padding:12px 16px;text-align:center;font-weight:600;font-size:1.125rem;box-shadow:0 4px 12px rgba(0,0,0,.08);display:block;position:relative;z-index:1000}#opening-banner[data-position=bottom]{position:fixed;left:0;bottom:0;width:100%;box-shadow:0 -4px 12px rgba(0,0,0,.08)}#opening-banner a{color:{{textColor}};text-decoration:underline}</style>",
+    "body": "<div id=\"opening-banner\" data-position=\"{{position}}\">{{message}}</div>"
   }
 }
