@@ -1,8 +1,9 @@
 # Banner Plugin
 
-A banner at the top of the page, or fixed to the bottom of the viewport. The plugin has no server code: the
-CMS fills the `inject` templates in `plugin.json` with the configured values
-(HTML-escaped) and adds them to the page head and the end of the body.
+A banner at the top of the page, or fixed to the bottom of the viewport. The
+plugin has no server code: the CMS fills the `inject` templates in
+`plugin.json` with the configured values (HTML-escaped) and adds them to the
+page head and the start of the body.
 
 ## Configuration
 
