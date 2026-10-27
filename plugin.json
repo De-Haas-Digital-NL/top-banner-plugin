@@ -1,13 +1,12 @@
 {
   "name": "top-banner",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "displayName": "Bottom Banner",
   "description": "Toon een aanpasbare, statische banner onderaan uw website.",
   "author": "De Haas Digital",
-  "capabilities": ["ui.inject"],
-  "entry": {
-    "server": "server.js"
-  },
+  "capabilities": [
+    "ui.inject"
+  ],
   "configSchema": {
     "message": {
       "type": "string",
@@ -27,5 +26,9 @@
       "default": "#ffffff",
       "description": "Bannertekstkleur (CSS-kleurwaarde of var)"
     }
+  },
+  "inject": {
+    "head": "<style id=\"opening-banner-css\">#opening-banner{background:{{bgColor}};color:{{textColor}};padding:12px 16px;text-align:center;font-weight:600;font-size:1.125rem;box-shadow:0 -4px 12px rgba(0,0,0,.08);display:block;position:fixed;width:100%;bottom:0;z-index:1000}#opening-banner a{color:{{textColor}};text-decoration:underline}</style>",
+    "body": "<div id=\"opening-banner\">{{message}}</div>"
   }
 }

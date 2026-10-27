@@ -1,7 +1,8 @@
 # Bottom Banner Plugin
 
-A simple, static banner that displays at the bottom of your website. It remains in
-the normal page flow and does not stay fixed to the viewport while scrolling.
+A banner fixed to the bottom of the viewport. The plugin has no server code: the
+CMS fills the `inject` templates in `plugin.json` with the configured values
+(HTML-escaped) and adds them to the page head and the end of the body.
 
 ## Configuration
 
@@ -11,6 +12,9 @@ the normal page flow and does not stay fixed to the viewport while scrolling.
 - **Text Color**: Customize the text color
 
 ## Version History
+
+### 1.1.0
+- Declarative `inject` templates replace `server.js`, for the Rust CMS
 
 ### 1.0.3
 - Move the banner to a static position at the bottom of the page
